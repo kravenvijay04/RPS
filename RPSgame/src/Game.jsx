@@ -10,6 +10,7 @@ const Game = () => {
   var [Result, setResult] = useState(null);
   var [overResult, setOverResult] = useState(null);
   var [gameover, setGameover] = useState(false);
+  var [set, newset] = useState(null);
 
   const choices = ['rock', 'paper', 'scissor'];
 
@@ -22,37 +23,45 @@ const Game = () => {
   function generateCompChoice() {
     var compChoices = choices[Math.floor(Math.random() * 3)];
     setCompChoice(compChoices);
-    console.log(compChoice)
+    console.log(compChoice);
   }
+
   //restart()--> reset the game
   function restart() {
     window.location.reload();
+  }
+  //function to set the maximum winning score
+  function setting(val) {
+    newset(val - 1)
   }
 
   //activating logic for the game
   useEffect(() => {
     var addedString = userChoice + compChoice;
-    if (userPoint <= 2 && compPoint <= 2) {
+
+    if (userPoint <= set && compPoint <= set) {
       if (addedString === 'rockscissor' || addedString === 'scissorpaper' || addedString === 'paperrock') {
         var updatedUser = userPoint + 1;
         setUserPoint(updatedUser);
-        setResult("You Won")
-        if (updatedUser === 3) {
-          setGameover(true)
-          setOverResult('You won the Game')
+        setResult("You Won");
+        if (updatedUser === (set + 1)) {
+          setGameover(true);
+          setOverResult('You won the Game');
         }
       }
       if (addedString === 'scissorrock' || addedString === 'paperscissor' || addedString === 'rockpaper') {
         var updatedComp = compPoint + 1;
         setCompPoint(updatedComp);
-        setResult("Computer Won")
-        if (updatedComp === 3) {
-          setGameover(true)
-          setOverResult('Computer won the Game')
+        setResult("Computer Won");
+        if (updatedComp === (set + 1)) {
+          setGameover(true);
+          setOverResult('Computer won the Game');
         }
       }
       if (addedString === 'scissorscissor' || addedString === 'paperpaper' || addedString === 'rockrock') {
-        setResult('draw')
+
+        setResult('draw');
+
       }
     }
   }, [compChoice, userChoice]);
@@ -60,6 +69,12 @@ const Game = () => {
   return (
     <>
       <h1>Rock Paper Scissor</h1>
+      <div className="settings">
+        <h2>Select the maximum winning score</h2>
+        <button onClick={() => { setting(3) }}>3</button>
+        <button onClick={() => { setting(5) }}>5</button>
+        <button onClick={() => { setting(10) }}>10</button>
+      </div>
       <div className="container">
         <div className="playerPlatform">
           <h3>player score :{userPoint}</h3>
