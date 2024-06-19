@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Shantell Sans", cursive;
+}
+
+#overlay {
+    background-color: rgb(161, 227, 227);
+    opacity: 0.5;
+    position: absolute;
+    height: 110%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+}
+
+#popup {
+    background-color: #1CA6D9;
+    display: none;
+    position: absolute;
+    left: 31%;
+    top: 30%;
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-top: 6%;
+    padding-bottom: 8%;
+    border-radius: 10px;
+    color: white;
+
+}
+
+#reset {
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    position: absolute;
+    left: 38%;
+    top: 67%;
+    font-family: "Shantell Sans", cursive;
+    border-radius: 20px;
+}
+
+#header {
+    color: blueviolet;
+    margin-left: 38%;
+}
+
+.settings {
+    border: 2px solid yellow;
+    margin-left: 20%;
+    margin-top: 2%;
+    margin-right: 20%;
+    border-radius: 10px;
+}
+
+h2 {
+    color: gray;
+    margin-left: 25%;
+}
+
+#group {
+    margin-left: 43%;
+    margin-bottom: 1%;
+}
+
+.butSetting {
+    margin-left: 5px;
+    padding: 10px;
+    background-color: rgb(111, 42, 42);
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
