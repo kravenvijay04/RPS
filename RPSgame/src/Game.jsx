@@ -89,11 +89,11 @@ const Game = () => {
       <div className="container">
         <div className="playerPlatform">
           <h3 id="head1">player score :{userPoint}</h3>
-          <img src={`public/imgs/USER${userChoice}.png`} alt="hand" />
+          <img src={`/public/imgs/USER${userChoice}.png`} alt="hand" />
         </div>
         <div className="computerPlatform">
           <h3 id="head2">computer score :{compPoint}</h3>
-          <img src={`public/imgs/COMP${compChoice}.png`} alt="hand" />
+          <img src={`/public/imgs/COMP${compChoice}.png`} alt="hand" />
         </div>
       </div>
       <div id="res">{Result}</div>
