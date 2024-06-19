@@ -40,6 +40,7 @@ const Game = () => {
   let overlay = document.getElementById('overlay')
   let pop = document.getElementById('popup')
 
+
   //activating logic for the game
   useEffect(() => {
     var addedString = userChoice + compChoice;
@@ -54,6 +55,7 @@ const Game = () => {
           setOverResult('Player won the Game');
           overlay.style.display = "block";
           pop.style.display = "block";
+
         }
       }
       if (addedString === 'scissorrock' || addedString === 'paperscissor' || addedString === 'rockpaper') {
@@ -86,19 +88,18 @@ const Game = () => {
       </div>
       <div className="container">
         <div className="playerPlatform">
-          <h3>player score :{userPoint}</h3>
+          <h3 id="head1">player score :{userPoint}</h3>
           <img src={`public/imgs/USER${userChoice}.png`} alt="hand" />
-
         </div>
         <div className="computerPlatform">
-          <h3>computer score :{compPoint}</h3>
+          <h3 id="head2">computer score :{compPoint}</h3>
           <img src={`public/imgs/COMP${compChoice}.png`} alt="hand" />
-
         </div>
-        <div className="res">{Result}</div>
       </div>
+      <div id="res">{Result}</div>
+
       <div className="buttons">
-        {choices.map((item, index) => <button key={index}
+        {choices.map((item, index) => <button id="mainbut" key={index}
           onClick={() => handle(item)} > {item} </button>)}
       </div>
       <div id="overlay"></div>
