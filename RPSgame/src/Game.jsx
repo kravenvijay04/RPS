@@ -10,7 +10,7 @@ const Game = () => {
   var [Result, setResult] = useState(null);
   var [overResult, setOverResult] = useState(null);
   var [gameover, setGameover] = useState(false);
-  
+
   const choices = ['rock', 'paper', 'scissor'];
 
   function handle(choice) {
@@ -63,12 +63,12 @@ const Game = () => {
       <div className="container">
         <div className="playerPlatform">
           <h3>player score :{userPoint}</h3>
-          <img src={`public/imgs/${userChoice}.png`} alt="hand" />
+          <img src={`public/imgs/USER${userChoice}.png`} alt="hand" />
 
         </div>
         <div className="computerPlatform">
           <h3>computer score :{compPoint}</h3>
-          <img src={`public/imgs/${compChoice}1.png`} alt="hand" />
+          <img src={`public/imgs/COMP${compChoice}.png`} alt="hand" />
 
         </div>
         <div className="res">{Result}</div>
