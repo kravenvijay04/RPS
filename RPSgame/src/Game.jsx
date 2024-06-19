@@ -9,7 +9,7 @@ const Game = () => {
   var [compPoint, setCompPoint] = useState(0);
   var [Result, setResult] = useState(null);
   var [overResult, setOverResult] = useState(null);
-  var [gameover, setGameover] = useState(false);
+  var [gameover, setGameover] = useState(true);
   var [set, newset] = useState(null);
 
   const choices = ['rock', 'paper', 'scissor'];
@@ -29,11 +29,16 @@ const Game = () => {
   //restart()--> reset the game
   function restart() {
     window.location.reload();
+    overlay.style.display = "none";
+    pop.style.display = "none";
+
   }
   //function to set the maximum winning score
   function setting(val) {
     newset(val - 1)
   }
+  let overlay = document.getElementById('overlay')
+  let pop = document.getElementById('popup')
 
   //activating logic for the game
   useEffect(() => {
@@ -46,7 +51,9 @@ const Game = () => {
         setResult("You Won");
         if (updatedUser === (set + 1)) {
           setGameover(true);
-          setOverResult('You won the Game');
+          setOverResult('Player won the Game');
+          overlay.style.display = "block";
+          pop.style.display = "block";
         }
       }
       if (addedString === 'scissorrock' || addedString === 'paperscissor' || addedString === 'rockpaper') {
@@ -56,6 +63,8 @@ const Game = () => {
         if (updatedComp === (set + 1)) {
           setGameover(true);
           setOverResult('Computer won the Game');
+          overlay.style.display = "block";
+          pop.style.display = "block";
         }
       }
       if (addedString === 'scissorscissor' || addedString === 'paperpaper' || addedString === 'rockrock') {
@@ -68,12 +77,12 @@ const Game = () => {
 
   return (
     <>
-      <h1>Rock Paper Scissor</h1>
+      <h1 id="header">Rock Paper Scissor</h1>
       <div className="settings">
-        <h2>Select the maximum winning score</h2>
-        <button onClick={() => { setting(3) }}>3</button>
-        <button onClick={() => { setting(5) }}>5</button>
-        <button onClick={() => { setting(10) }}>10</button>
+        <h2>Select the maximum winning score</h2><div id="group">
+          <button className="butSetting" onClick={() => { setting(3) }}>3</button>
+          <button className="butSetting" onClick={() => { setting(5) }}>5</button>
+          <button className="butSetting" onClick={() => { setting(10) }}>10</button></div>
       </div>
       <div className="container">
         <div className="playerPlatform">
@@ -92,10 +101,11 @@ const Game = () => {
         {choices.map((item, index) => <button key={index}
           onClick={() => handle(item)} > {item} </button>)}
       </div>
-      <div>
+      <div id="overlay"></div>
+      <div id="popup">
         <h1>{overResult}</h1>
         {gameover &&
-          <button onClick={() => restart()}>Restart?</button>}
+          <button id="reset" onClick={() => restart()}>Restart?</button>}
       </div>
     </>
   )
