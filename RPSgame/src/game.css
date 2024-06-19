@@ -31,7 +31,6 @@ body {
     padding-bottom: 8%;
     border-radius: 10px;
     color: white;
-
 }
 
 #reset {
@@ -79,4 +78,48 @@ h2 {
     color: white;
     border: none;
     border-radius: 2px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#head1 {
+    margin-left: 30%;
+    margin-bottom: 4%;
+}
+
+#head2 {
+    margin-left: 25%;
+    margin-bottom: 4%;
+}
+
+#res {
+    display: flex;
+    justify-content: center;
+    color: green;
+    font-size: 20px;
+    margin-left: 45%;
+    border: 2px solid rgb(0, 0, 0);
+    margin-right: 45%;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    margin-left: 42%;
+    padding: 20px;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+#mainbut {
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
