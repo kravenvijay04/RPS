@@ -3,9 +3,12 @@
     margin: 0;
 }
 
+
+
 body {
     font-family: "Shantell Sans", cursive;
 }
+
 
 #overlay {
     background-color: rgb(161, 227, 227);
@@ -106,6 +109,7 @@ h2 {
     border: 2px solid rgb(0, 0, 0);
     margin-right: 45%;
     border-radius: 10px;
+
 }
 
 .buttons {
@@ -122,4 +126,75 @@ h2 {
     color: white;
     padding: 10px;
     border-radius: 10px;
+}
+
+
+@media screen and (max-width:430.4px) {
+    #header {
+        margin-left: 0;
+        padding-left: 65px;
+        background-color: blueviolet;
+        color: white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .settings {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 30px;
+    }
+
+    h2 {
+        margin-left: 30px;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    #group {
+        margin-left: 33%;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .butSetting {
+        padding: 15px;
+
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 20px;
+
+    }
+
+    .container {
+        gap: 30px;
+        margin-top: 10%;
+    }
+
+    #head1 {
+        margin-left: 15px;
+        margin-bottom: 30%;
+    }
+
+    #head2 {
+        margin-left: 10px;
+        margin-bottom: 30%;
+    }
+
+    #res {
+        border: none;
+        margin-top: 30px;
+        background-color: aqua;
+
+    }
+
+    .buttons {
+        margin-left: 25%;
+        margin-top: 10%;
+    }
+
+
 }
