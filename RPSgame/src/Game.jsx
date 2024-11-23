@@ -79,7 +79,7 @@ const Game = () => {
 
   return (
     <>
-      <h1 id="header">Rock Paper Scissor</h1>
+      <h1 id="header">Rock Paper Scissor v1</h1>
       <div className="settings">
         <h2>Select the maximum winning score</h2><div id="group">
           <button className="butSetting" onClick={() => { setting(3) }}>3</button>
