@@ -1,200 +1,151 @@
-* {
-    box-sizing: border-box;
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #4CAF50;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: white;
     margin: 0;
 }
 
-
-
-body {
-    font-family: "Shantell Sans", cursive;
-}
-
-
-#overlay {
-    background-color: rgb(161, 227, 227);
-    opacity: 0.5;
-    position: absolute;
-    height: 110%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    display: none;
-}
-
-#popup {
-    background-color: #1CA6D9;
-    display: none;
-    position: absolute;
-    left: 31%;
-    top: 30%;
-    padding-left: 9%;
-    padding-right: 9%;
-    padding-top: 6%;
-    padding-bottom: 8%;
-    border-radius: 10px;
+.navbar a {
     color: white;
+    text-decoration: none;
+    margin-left: 20px;
 }
 
-#reset {
-    border: none;
-    background-color: blueviolet;
-    color: white;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    position: absolute;
-    left: 38%;
-    top: 67%;
-    font-family: "Shantell Sans", cursive;
-    border-radius: 20px;
+.navbar a:hover {
+    text-decoration: underline;
 }
 
-#header {
-    color: blueviolet;
-    margin-left: 38%;
+/* Main Game Container */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
 }
 
+.playerPlatform, .computerPlatform {
+    text-align: center;
+}
+
+.playerPlatform img, .computerPlatform img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+}
+
+/* Score and Result Styles */
+#res {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* Settings Buttons */
 .settings {
-    border: 2px solid yellow;
-    margin-left: 20%;
-    margin-top: 2%;
-    margin-right: 20%;
-    border-radius: 10px;
-}
-
-h2 {
-    color: gray;
-    margin-left: 25%;
-}
-
-#group {
-    margin-left: 43%;
-    margin-bottom: 1%;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .butSetting {
-    margin-left: 5px;
-    padding: 10px;
-    background-color: rgb(111, 42, 42);
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 2px;
+    padding: 10px 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.container {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 20px;
-    margin-top: 10px;
+.butSetting:hover {
+    background-color: #45a049;
 }
 
-#head1 {
-    margin-left: 30%;
-    margin-bottom: 4%;
-}
-
-#head2 {
-    margin-left: 25%;
-    margin-bottom: 4%;
-}
-
-#res {
-    display: flex;
-    justify-content: center;
-    color: green;
-    font-size: 20px;
-    margin-left: 45%;
-    border: 2px solid rgb(0, 0, 0);
-    margin-right: 45%;
-    border-radius: 10px;
-
-}
-
+/* Game Buttons */
 .buttons {
     display: flex;
-    margin-left: 42%;
-    padding: 20px;
-    margin-top: 10px;
-    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 #mainbut {
-    border: none;
-    background-color: blueviolet;
+    background-color: #2196F3;
     color: white;
-    padding: 10px;
-    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+#mainbut:hover {
+    background-color: #1976D2;
+}
 
-@media screen and (max-width:430.4px) {
-    #header {
-        margin-left: 0;
-        padding-left: 65px;
-        background-color: blueviolet;
-        color: white;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
+/* Overlay and Popup Styles */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Hidden by default */
+    z-index: 999;
+}
 
-    .settings {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 30px;
-    }
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    text-align: center;
+}
 
-    h2 {
-        margin-left: 30px;
-        font-size: 20px;
-        padding: 10px;
-    }
+#popup h1 {
+    margin: 0 0 20px;
+}
 
-    #group {
-        margin-left: 33%;
-        margin-bottom: 20px;
-        margin-top: 10px;
-    }
+#reset {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-    .butSetting {
-        padding: 15px;
+#reset:hover {
+    background-color: #45a049;
+}
 
-    }
-
-    img {
-        max-width: 100%;
-        max-height: 100%;
-        padding: 20px;
-
-    }
-
-    .container {
-        gap: 30px;
-        margin-top: 10%;
-    }
-
-    #head1 {
-        margin-left: 15px;
-        margin-bottom: 30%;
-    }
-
-    #head2 {
-        margin-left: 10px;
-        margin-bottom: 30%;
-    }
-
-    #res {
-        border: none;
-        margin-top: 30px;
-        background-color: aqua;
-
-    }
-
-    .buttons {
-        margin-left: 25%;
-        margin-top: 10%;
-    }
-
-
+/* Show overlay and popup */
+.show {
+    display: block;
 }
