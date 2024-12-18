@@ -41,7 +41,7 @@ const Game = () => {
   let pop = document.getElementById('popup')
 
 
-  //activating logic for the game
+  //activating logic for the RPS game
   useEffect(() => {
     var addedString = userChoice + compChoice;
 
